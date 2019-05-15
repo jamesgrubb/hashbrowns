@@ -1,20 +1,18 @@
 import Airtable from 'airtable';
 const base = new Airtable({
-    apiKey: process.env.REACT_APP_AIRTABLE_KEY
-}).base(process.env.REACT_APP_AIRTABLE_BASE)
+    apiKey: "keyOvvhUnOpma7wQk"
+}).base("applJ4lNbPAUA6ZEb")
 
 const airtable = (setState) => {
-base("script")
-.select({view: "Grid view"})
-.eachPage((records, fetchNextPage) => {
-    if(records.length){
+    base('script').select({view: 'Grid view'})
+    .eachPage(
+      (records, fetchNextPage) => {
         setState({
-            records
-        })
-    }
-    console.log(records);
-    fetchNextPage();
-})
+          records
+        });
+        fetchNextPage();
+      }
+    );
 }
 
 export default airtable
