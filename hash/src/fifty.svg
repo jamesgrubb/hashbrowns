@@ -1,5 +1,10 @@
 <svg class="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 150">
-
+<filter id="displacementFilter">
+    <feTurbulence type="turbulence" baseFrequency="2"
+        numOctaves="10" result="turbulence"/>
+    <feDisplacementMap in2="turbulence" in="SourceGraphic"
+        scale="5" />
+  </filter>
     <clipPath id="zero" >
         <rect x="0" y="0" width="50" height="100" />
         </clipPath>

@@ -16,7 +16,7 @@ const Main = styled.main.attrs({
 `;
 
 const Content = styled.article.attrs({
-  className: "w-100 vh-100 pa3"
+  className: "w-100 vh-100 pt6"
 })`
   grid-column: 1 / -1;
 `;
@@ -28,11 +28,6 @@ const Url = styled.a.attrs({
   }
 `;
 
-const MaskWrapper = styled.div`
-  grid-column: 3 / -1;
-  grid-row: 3 / -1;
-`;
-
 const ContentWrapper = props => {
   const [state, setState] = useState({
     records: []
@@ -42,7 +37,7 @@ const ContentWrapper = props => {
     airtable(setState);
   }, []);
   console.log(state.records);
-
+  console.log(`Prop ${props.match}`);
   return (
     <Main>
       {state.records.length > 0 ? (

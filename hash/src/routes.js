@@ -24,6 +24,7 @@ const ContainerBackground = styled.div.attrs({
   grid-template-rows: repeat(6, 1fr);
   grid-column: 1 / span 1;
   > svg {
+    filter: url(#displacementFilter);
     --svgGrid: 1 / span 6;
     fill: #e8fdf5;
     width: auto;
@@ -45,6 +46,7 @@ export const Routes = () => {
       <NavBar />
       <Content />
       <Route path="/#What" />
+      <Route path="/#What/:name" component={null} />
       <Route path="/#Where" />
       <Route path="/#When" />
     </Container>
