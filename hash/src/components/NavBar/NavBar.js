@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components'
+import airtable from '../../utils/airtable'
 import {HashLink as Link} from 'react-router-hash-link'
 
 const NavBar = styled.nav.attrs({
@@ -9,6 +10,14 @@ grid-column: 1 / span 1;
 `
 
 const NavWrapper = () => {
+
+    const [state, setState] = useState({
+        records : []
+    })
+    useEffect(() => {
+        airtable(setState)
+    },[])
+    console.log(state)
     return(
 <NavBar>
     <ul>
