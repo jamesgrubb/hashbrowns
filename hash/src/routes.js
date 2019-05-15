@@ -24,11 +24,15 @@ const ContainerBackground = styled.div.attrs({
   grid-template-rows: repeat(6, 1fr);
   grid-column: 1 / span 1;
   > svg {
+    --svgGrid: 1 / span 6;
     fill: #e8fdf5;
     width: auto;
     height: 100%;
-    grid-row: 1 / span 6;
+    grid-row: var(--svgGrid);
     transform: translate(-20vmin, -1vmin) scale(1.1);
+    @media all and (max-width: 400px) {
+      grid-row: 4 / span 3;
+    }
   }
 `;
 
