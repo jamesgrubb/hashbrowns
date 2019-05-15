@@ -1,0 +1,12 @@
+<svg class="five"
+     viewBox="0 0 50 150" version="1.1"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     preserveAspectRatio="xMaxYMin slice"
+     >
+    <clipPath id="five">
+        <rect x="0" y="50" width="50" height="100" style=""/>
+    </clipPath>
+        <rect x="0" y="0" width="50" height="48" style=""/>
+        <rect x="-50" y="50" width="100" height="100"  rx="15"  style="clip-path: url(#five)"/>
+</svg>
