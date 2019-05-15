@@ -1,7 +1,7 @@
 import Airtable from 'airtable';
 const base = new Airtable({
-    apiKey: "process.env.AIRTABLE_KEY"
-}).base("process.env.AIRTABLE_BASE")
+    apiKey: "process.env.REACT_APP_AIRTABLE_KEY"
+}).base("process.env.REACT_APP_AIRTABLE_BASE")
 
 const airtable = (setState) => {
 base("script")
