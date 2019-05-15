@@ -1,0 +1,4 @@
+[build]
+base="hash"
+publish="hash/build"
+command="npm run build"
