@@ -12,12 +12,15 @@ const Main = styled.main.attrs({
 className: ""
 })`
 grid-column: 2 / span 1
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+grid-template-rows: repeat(6, 1fr)
 `
 
 const Content = styled.article.attrs({
     className: "w-100 vh-100 pa3"
 })`
-
+grid-column: 1 / -1
 `
 const Url = styled.a.attrs({
     className: "link"
@@ -26,15 +29,11 @@ const Url = styled.a.attrs({
     content: "→"
 }
 `
-const Svg = (props) => {
-    return(
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <clipPath id={props.id} clipPathUnits="objectBoundingBox" transform="scale(0.01)">
-                {props.shape}
-            </clipPath>
-        </svg>
-    )
-}
+
+const MaskWrapper = styled.div`
+grid-column: 3 / -1;
+grid-row: 3 / -1
+`
 
 const Figure = (props) => {
     return(
@@ -45,24 +44,8 @@ const Figure = (props) => {
 
 const ContentWrapper = (props) => {
 
-    const [svg] = useState({
-        svg : [
-            {
-                id: "triangle",
-                shape: "<polygon points='0 0 100 0 100 100 0 100'/>" 
-            },
-            {
-                id: "circle",
-                shape: "<polygon points='0 0 100 0 100 100 0 100'/>"
-            },
-            {
-                id: "square",
-                shape: "<polygon points='0 0 100 0 100 100 0 100'/>"
-            }            
-        ]
-    })
-
-         
+    
+   
    const [state, setState] = useState({
         records: []
     });
@@ -71,6 +54,7 @@ const ContentWrapper = (props) => {
         airtable(setState)
     },[])
     console.log(state.records)
+
 return(
     
     <Main>
@@ -81,8 +65,9 @@ return(
             <h1>{record.fields["Title"]}</h1>
             <p className="dark-green lh-copy">{record.fields["Description"]}</p>
             {record.fields["Url"] ? (<Url href={record.fields["Url"]}>{record.fields["UrlLink"]}</Url>) : null}
-            <Svg id={svg.svg[index].id} shape={svg.svg[index].shape}/>
-            <Mask />
+            <MaskWrapper>
+                <Mask />
+            </MaskWrapper>
             <Figure url={record.fields['Image']} />
             </Content>)
         })) : (<p>Loading</p>)}
