@@ -6,12 +6,12 @@ import {Content} from './components/Content'
 import 'tachyons';
 
 const Container = styled.div.attrs({
-  className : "container w-100 h-100 pa5 bg-light-green"
+  className : "container w-100 h-100 pa2 bg-light-green mw8"
 })`
---grid: 1fr 2fr;
+--grid: minmax(100px, 300px) minmax(15rem, 2fr);
 display: grid;
 grid-template-columns: var(--grid);
-@media all and (max-width:400px){
+@media all and (max-width:200px){
   --grid: 1fr
 }
 `
@@ -20,11 +20,7 @@ export const Routes = () => {
   return (    
     <Container>
       <NavBar />
-      <Content id="What"><h1>
-        What
-      </h1></Content>
-      <Content id="Where">Where</Content>
-      <Content id="When">When</Content>
+      <Content />
       <Route path="/#What" />
       <Route path="/#Where" />
       <Route path="/#When" />

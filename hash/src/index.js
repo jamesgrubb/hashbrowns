@@ -14,7 +14,14 @@ const GlobalStyles = createGlobalStyle`
 html{
     box-sizing: inherit
 }
-h1,h2{
+
+html, body{
+    width: 100%;
+    height: 100%;
+    background-color: #9EEBCF;
+}
+
+h1,h2,h3{
     font-family: "Expletus Sans", sans-serif
 }
 `
