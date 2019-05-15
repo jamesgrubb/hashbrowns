@@ -16,7 +16,7 @@ const Main = styled.main.attrs({
 `;
 
 const Content = styled.article.attrs({
-  className: "w-100 vh-100 pt6"
+  className: "w-100 vh-100 pt6 pr6-ns pr3-s"
 })`
   grid-column: 1 / -1;
 `;
@@ -45,12 +45,12 @@ const ContentWrapper = props => {
           return (
             <Content key={index} id={record.fields["Link"]}>
               <Breadcrumb>{record.fields["Link"]}</Breadcrumb>
-              <h1>{record.fields["Title"]}</h1>
+              <h1 className="dark-gray">{record.fields["Title"]}</h1>
               <p className="dark-green lh-copy">
                 {record.fields["Description"]}
               </p>
               {record.fields["Url"] ? (
-                <Url href={record.fields["Url"]}>
+                <Url className="pink" href={record.fields["Url"]}>
                   {record.fields["UrlLink"]}
                 </Url>
               ) : null}
