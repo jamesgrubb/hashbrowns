@@ -6,7 +6,7 @@ const Breadcrumb = styled.h3.attrs({
   className: "f7 ttu o-50 dark-green tracked"
 })``;
 const Main = styled.main.attrs({
-  className: ""
+  className: "pr4 pr6-ns"
 })`
   z-index: 1;
   grid-column: 2 / span 1;
@@ -16,7 +16,7 @@ const Main = styled.main.attrs({
 `;
 
 const Content = styled.article.attrs({
-  className: "w-100 vh-100 pt6 pr6-ns pr3-s"
+  className: "w-100 vh-100 pt2 pt6-ns"
 })`
   grid-column: 1 / -1;
 `;

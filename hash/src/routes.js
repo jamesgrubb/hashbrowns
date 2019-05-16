@@ -22,7 +22,7 @@ const ContainerBackground = styled.div.attrs({
   z-index: 0;
   display: grid;
   grid-template-rows: repeat(6, 1fr);
-  grid-column: 1 / span 1;
+  grid-column: 1 / -1;
   > svg {
     filter: url(#displacementFilter);
     --svgGrid: 1 / span 6;
@@ -33,6 +33,8 @@ const ContainerBackground = styled.div.attrs({
     transform: translate(-20vmin, -1vmin) scale(1.1);
     @media all and (max-width: 400px) {
       grid-row: 4 / span 3;
+      justify-self: end;
+      transform: translate(10vmin, -1vmin) scale(1.1);
     }
   }
 `;
